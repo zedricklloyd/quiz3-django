@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            background-color: beige;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            text-align: center;
+            color: #940c0c;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 60px;
+            font-family: fantasy;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            background-color: #17365d;
+            padding: 20px;
+            border: 4px solid #000000;
+            border-radius: 20px;
+            
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        
+         
+        }
+
+        th, td {
+            padding: 20px;
+            text-align: center;
+            color: #ffd700;
+            border: 1px solid;
+            
+            
+        }
+
+        th {
+            font-size: 20px;
+        }
+
+        td {
+            font-size: 18px;
+        }
+
+        tr:hover {
+            background-color: #05203f;
+        }
+
+        .empty-message {
+            background-color: #17365d;
+            color: #ffd700;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Student List</h1>
+    </div>
+
+    <div class="container">
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Age</th>
+            </tr>
+
+            {% for x in student %}
+            <tr>
+                <td>{{x.name}}</td>
+                <td>{{x.course}}</td>
+                <td>{{x.age}}</td>
+            </tr>
+
+            {% empty %}
+            <tr>
+                <td colspan="3">No students found.</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</body>
+</html>
